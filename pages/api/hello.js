@@ -1,10 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const { response } = require('express');
-const Connection = require('mysql/lib/Connection');
 
 const pool = mysql.createPool({
   connectionLimit : 10,
