@@ -21,9 +21,9 @@ export default function handler(req, res) {
   pool.getConnection((err,connection) => {
 
     if(err) throw err
-    console.log('connected as id')-
+    console.log('connected as id')
 
-    connection.query('SELECT * FROM orders',(err,rows)=> {
+    connection.query('SELECT * FROM orders WHERE price = ?',[req.params.price],(err,rows)=> {
        connection.release()
 
        if(!err)
