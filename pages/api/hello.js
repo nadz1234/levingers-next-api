@@ -1,5 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
+<<<<<<< HEAD
+=======
+
+const express = require('express');
+const bodyParser = require('body-parser');
+>>>>>>> 27113b4d59e35c4bc1109ab785ebc2f4dcd2ac8b
 const mysql = require('mysql');
 
 const pool = mysql.createPool({
