@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to nads
+          Welcome to nadss
         </h1>
 
         <p className={styles.description}>

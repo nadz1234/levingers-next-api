@@ -1,6 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-
 const mysql = require('mysql');
 
 const pool = mysql.createPool({
@@ -19,13 +16,14 @@ export default function handler(req, res) {
 
     if(err) throw err
     console.log('connected as id')
+    const params = req.body
 
-    connection.query('SELECT * FROM orders',(err,rows)=> {
+    connection.query('INSERT INTO user_information set ?',params,(err,rows)=> {
        connection.release()
 
        if(!err)
        {
-           res.send(rows)
+           res.send(`users with param ${params} has been added`)
        }
        else
        {
