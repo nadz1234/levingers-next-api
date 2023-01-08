@@ -20,7 +20,7 @@ export default function handler(req, res) {
     if(err) throw err
     console.log('connected as id')
 
-    connection.query('SELECT COUNT(*) as ordersToday FROM orders JOIN user_location ON orders.user_id = user_location.user_id AND user_location.store = ? WHERE orders.price > 250', [req.query.store], (err,rows)=> {
+    connection.query('SELECT COUNT(*) as ordersToday FROM orders JOIN user_location ON orders.user_id = user_location.user_id AND user_location.store = ? WHERE DATE(orders.timeOfOrder) = CURDATE()', [req.query.store], (err,rows)=> {
        connection.release() 
 
        if(!err)
